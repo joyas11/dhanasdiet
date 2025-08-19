@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)file:///C:/Users/Joyas/Desktop/DOCTYPE.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dhana’s Daily Diet ❤</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./Dhana’s Daily Diet ❤_files/css2" rel="stylesheet">
+  <style>
+    :root {
+      --pink-1:#fff1f6; /* background */
+      --pink-2:#ffd9e6; /* cards */
+      --pink-3:#ffb7d1; /* accents */
+      --pink-4:#ff8fb1; /* stronger accent */
+      --ink:#5a2a3a;   /* text */
+      --white:#ffffff;
+      --shadow: 0 10px 20px rgba(255, 143, 177, 0.25);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; 
+      font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, var(--pink-1), #ffeaf1 35%, #fff6fa 100%) fixed;
+    }
+
+   .free-choice {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border: 2px dashed var(--pink-3);
+  border-radius: 14px;
+  background: #fff0f6;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.free-choice input[type="checkbox"] {
+  flex-shrink: 0;
+}
+
+
+    header {
+      position: relative;
+      padding: 28px 16px 18px;
+      text-align: center;
+    }
+    .title {
+      font-family: 'Pacifico', cursive;
+      font-size: clamp(28px, 5vw, 48px);
+      letter-spacing: 0.5px;
+      color: var(--ink);
+      text-shadow: 0 2px 0 rgba(255,255,255,.7);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .title .bow {
+      width: 52px; height: 36px;
+      filter: drop-shadow(0 6px 10px rgba(255, 143, 177, .35));
+    }
+
+    .sub {
+      margin-top: 6px;
+      font-weight: 600;
+      color: #7a3c52;
+    }
+
+    .wrap {
+      max-width: 1000px; margin: 0 auto; padding: 12px 16px 48px;
+      position: relative;
+    }
+
+    .grid {
+      display: grid; gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .card {
+      background: var(--white);
+      border: 2px solid var(--pink-2);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 16px 16px 14px;
+      position: relative;
+    }
+
+    .meal-title {
+      display: flex; align-items: center; gap: 10px; 
+      font-weight: 700; font-size: 18px;
+    }
+    .tag {
+      background: var(--pink-2); border: 1px solid var(--pink-3);
+      color: #7a3c52; padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 700;
+    }
+
+    ul.items { list-style: none; padding: 10px 0 0; margin: 0; }
+    ul.items li { display:flex; align-items:center; gap:10px; padding:8px 8px; border-radius:12px; }
+    ul.items li:nth-child(odd) { background: #fff6fa; }
+    .kcal { margin-left: auto; font-weight:700; }
+
+    .subtotal { margin-top: 12px; padding-top: 10px; border-top: 2px dashed var(--pink-3); display:flex; align-items:center; gap:10px; font-weight:700; }
+
+    .footer-card {
+      background: linear-gradient(180deg, var(--pink-2), #ffe0ec);
+      border-color: var(--pink-3);
+    }
+
+    .totals {
+      display:grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top: 12px;
+    }
+    .chip { background:#fff; border:1px solid var(--pink-3); padding:10px 12px; border-radius:14px; font-weight:700; text-align:center; }
+
+    .progress {
+      width:100%; height: 12px; background: #ffeaf3; border:1px solid var(--pink-3); border-radius: 999px; overflow:hidden; margin-top: 8px;
+    }
+    .progress > span { display:block; height:100%; background: linear-gradient(90deg, #ff9dbf, #ff8fb1); width: 100%; }
+
+    .toolbar { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin: 10px 0 18px; }
+    .btn {
+      border:2px solid var(--pink-3); background:#fff; padding:8px 14px; border-radius:999px; font-weight:700; cursor:pointer; transition:.15s transform ease, .2s box-shadow ease;
+      box-shadow: 0 6px 12px rgba(255,143,177,.18);
+    }
+    .btn:hover { transform: translateY(-1px); }
+
+    .note { font-size: 12px; opacity: .85; margin-top: 8px; text-align:center; }
+
+    /* Cute floating hearts */
+    .floaty { position: fixed; inset: 0; pointer-events: none; }
+    .heart { position:absolute; width:14px; height:14px; background:#ff8fb1; transform: rotate(45deg); opacity: .28; animation: float 9s linear infinite; }
+    .heart::before, .heart::after { content:""; position:absolute; width:14px; height:14px; background:#ff8fb1; border-radius:50%; }
+    .heart::before { left:-7px; }
+    .heart::after { top:-7px; }
+    @keyframes float { from { transform: translateY(0) rotate(45deg); } to { transform: translateY(-120vh) rotate(45deg); } }
+
+    footer { text-align:center; padding: 18px; font-size:12px; color:#7a3c52; }
+
+    /* Checkbox styling */
+    input[type="checkbox"] {
+      appearance: none; width: 18px; height: 18px; border:2px solid var(--pink-4); border-radius:6px; display:grid; place-items:center; cursor:pointer; background:#fff;
+    }
+    input[type="checkbox"]::after { content:"❤"; font-size:12px; transform: scale(0); transition:.12s ease-in-out; }
+    input[type="checkbox"]:checked::after { transform: scale(1); }
+
+    .time { font-size:12px; font-weight:700; color:#7a3c52; padding:2px 8px; border:1px dashed var(--pink-3); border-radius:999px; }
+
+    @media print {
+      .toolbar, .floaty { display:none !important; }
+      body { background: #fff; }
+      .card { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="floaty" aria-hidden="true" id="hearts"><div class="heart" style="width: 8.23627px; height: 8.23627px; left: 8.98555vw; bottom: -10vh; animation-duration: 11.0384s; opacity: 0.240157;"></div><div class="heart" style="width: 23.3838px; height: 23.3838px; left: 88.5421vw; bottom: -10vh; animation-duration: 10.0675s; opacity: 0.277444;"></div><div class="heart" style="width: 14.7942px; height: 14.7942px; left: 17.5125vw; bottom: -10vh; animation-duration: 9.03068s; opacity: 0.381911;"></div><div class="heart" style="width: 10.5761px; height: 10.5761px; left: 5.82583vw; bottom: -10vh; animation-duration: 7.06146s; opacity: 0.240982;"></div><div class="heart" style="width: 16.8691px; height: 16.8691px; left: 95.7304vw; bottom: -10vh; animation-duration: 11.3958s; opacity: 0.351866;"></div><div class="heart" style="width: 23.2653px; height: 23.2653px; left: 5.92813vw; bottom: -10vh; animation-duration: 6.65331s; opacity: 0.380991;"></div><div class="heart" style="width: 11.6114px; height: 11.6114px; left: 47.7223vw; bottom: -10vh; animation-duration: 9.33549s; opacity: 0.186235;"></div><div class="heart" style="width: 14.8744px; height: 14.8744px; left: 67.7923vw; bottom: -10vh; animation-duration: 8.16597s; opacity: 0.250474;"></div><div class="heart" style="width: 19.5395px; height: 19.5395px; left: 11.6854vw; bottom: -10vh; animation-duration: 9.31042s; opacity: 0.214239;"></div><div class="heart" style="width: 17.6393px; height: 17.6393px; left: 27.5924vw; bottom: -10vh; animation-duration: 10.3358s; opacity: 0.174484;"></div><div class="heart" style="width: 21.9493px; height: 21.9493px; left: 13.8808vw; bottom: -10vh; animation-duration: 10.2697s; opacity: 0.155051;"></div><div class="heart" style="width: 22.2259px; height: 22.2259px; left: 60.5591vw; bottom: -10vh; animation-duration: 10.0152s; opacity: 0.346279;"></div><div class="heart" style="width: 19.8771px; height: 19.8771px; left: 61.3568vw; bottom: -10vh; animation-duration: 9.04292s; opacity: 0.213522;"></div><div class="heart" style="width: 18.8866px; height: 18.8866px; left: 31.4069vw; bottom: -10vh; animation-duration: 7.86977s; opacity: 0.311414;"></div><div class="heart" style="width: 17.9846px; height: 17.9846px; left: 35.8573vw; bottom: -10vh; animation-duration: 10.5069s; opacity: 0.159122;"></div><div class="heart" style="width: 15.6197px; height: 15.6197px; left: 21.9104vw; bottom: -10vh; animation-duration: 8.43257s; opacity: 0.190803;"></div></div>
+
+  <header>
+    <div class="title">
+      <svg class="bow" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M20 40c-8-8-8-24 6-28 11-3 22 6 27 12 5-6 16-15 27-12 14 4 14 20 6 28l14 8c10 6 7 18-6 19-11 0-26-8-34-17-8 9-23 17-34 17-13-1-16-13-6-19l14-8z" fill="#ff8fb1" stroke="#e07799" stroke-width="4"></path>
+      </svg>
+      Dhana's Daily Diet ❤
+    </div>
+    <div class="sub">i love you my cutu <span title="heart">&lt;3</span></div>
+    <div class="sub"> eat daily ok 😡 </div>
+  </header>
+
+  <div class="wrap">
+    <div class="toolbar">
+      <button class="btn" onclick="window.print()">🖨️ Print </button>
+      <button class="btn" id="reset">🔄 Reset </button>
+    </div>
+
+    <div class="grid">
+      <!-- Early Morning -->
+      <section class="card" id="early">
+        <div class="meal-title">🌅 Early Morning <span class="time">7:00 AM</span> <span class="tag">~250 kcal</span></div>
+        <ul class="items">
+          <li><input type="checkbox"> Warm milk (250 ml) + 3 dates + 5 almonds <span class="kcal">250</span></li>
+        </ul>
+        <div class="subtotal">Subtotal: <span style="margin-left:auto;">≈ 250 kcal</span></div>
+      </section>
+
+      <!-- Breakfast -->
+      <section class="card" id="breakfast">
+        <div class="meal-title">🥣 Breakfast <span class="time">9:00 AM</span> <span class="tag">~850 kcal</span></div>
+        <ul class="items">
+          <li><input type="checkbox"> Peanut butter banana sandwich (4 bread + 3 tbsp PB + 1 banana) <span class="kcal">700</span></li>
+          <li><input type="checkbox"> Milk (250 ml) <span class="kcal">150</span></li>
+        </ul>
+        <div class="subtotal">Subtotal: <span style="margin-left:auto;">≈ 850 kcal</span></div>
+      </section>
+
+      <!-- Mid-Morning Snack -->
+<section class="card" id="mid">
+  <div class="meal-title">🍎 Mid-Morning Snack <span class="time">11:30 AM</span> <span class="tag">~180 kcal</span></div>
+  <ul class="items">
+    <li><input type="checkbox"> One boiled egg <span class="kcal">80</span></li>
+    <li><input type="checkbox"> One Banana <span class="kcal">100</span></li>
+    
+  </ul>
+
+  <!-- Special box for "eat whatever you want" -->
+  <div class="free-choice">
+    <input type="checkbox"> OR eat whatever the fuck u want <span class="kcal">180</span>
+  </div>
+
+  <div class="subtotal">Subtotal: <span style="margin-left:auto;">≈ 180 kcal</span></div>
+</section>
+
+      <!-- Lunch -->
+      <section class="card" id="lunch">
+        <div class="meal-title">🍛 Lunch <span class="time">2:00 PM</span> <span class="tag">~1,110 kcal</span></div>
+        <ul class="items">
+          <li><input type="checkbox"> Cooked rice (2.5 cups) <span class="kcal">500</span></li>
+          <li><input type="checkbox"> Dal (1 cup) <span class="kcal">180</span></li>
+          <li><input type="checkbox"> Paneer curry (125 g paneer) <span class="kcal">350</span></li>
+          <li><input type="checkbox"> Curd with sugar <span class="kcal">80</span></li>
+	  <!-- Special box for "eat whatever you want" -->
+  <div class="free-choice">
+    <input type="checkbox"> OR eat whatever the fuck u want <span class="kcal">1,110</span>
+  </div>
+        </ul>
+        <div class="subtotal">Subtotal: <span style="margin-left:auto;">≈ 1,110 kcal</span></div>
+      </section>
+
+      <!-- Evening Snack -->
+      <section class="card" id="evening">
+        <div class="meal-title">☕ Evening Snack <span class="time">5:00 PM</span> <span class="tag">700–750 kcal</span></div>
+        <ul class="items">
+          <li><input type="checkbox"> High‑Calorie Shake (milk + banana + peanut butter + oats + honey) <span class="kcal">700–750</span></li>
+        </ul>
+        <div class="subtotal">Subtotal: <span style="margin-left:auto;">≈ 700–750 kcal</span></div>
+      </section>
+
+      <!-- Dinner -->
+      <section class="card" id="dinner">
+        <div class="meal-title">🍽️ Dinner <span class="time">8:00 PM</span> <span class="tag">~930 kcal</span></div>
+        <ul class="items">
+          <li><input type="checkbox"> Rotis with ghee (3) <span class="kcal">350</span></li>
+          <li><input type="checkbox"> Chicken curry (125 g) <span class="kcal">280</span></li>
+          <li><input type="checkbox"> Mixed veg sabzi <span class="kcal">120</span></li>
+          <li><input type="checkbox"> Dal (1 cup) <span class="kcal">180</span></li>
+	  <!-- Special box for "eat whatever you want" -->
+  <div class="free-choice">
+    <input type="checkbox"> OR eat whatever the fuck u want <span class="kcal">930</span>
+  </div>
+        </ul>
+        <div class="subtotal">Subtotal: <span style="margin-left:auto;">≈ 930 kcal</span></div>
+      </section>
+
+      <!-- Bedtime -->
+      <section class="card" id="bed">
+        <div class="meal-title">🌙 Before Bed <span class="time">10:00 PM</span> <span class="tag">~250 kcal</span></div>
+        <ul class="items">
+          <li><input type="checkbox"> Warm milk (250 ml) + 4 walnuts <span class="kcal">250</span></li>
+        </ul>
+        <div class="subtotal">Subtotal: <span style="margin-left:auto;">≈ 250 kcal</span></div>
+      </section>
+
+      <!-- Totals -->
+      <section class="card footer-card" id="totals">
+        <div class="meal-title">🔹 Daily Totals</div>
+        <div class="totals">
+          <div class="chip">Calories: ~2,820–2,850 kcal</div>
+          <div class="chip">Protein: ~95–100 g</div>
+          <div class="chip">Carbs: ~360–370 g</div>
+          <div class="chip">Fats: ~95 g</div>
+        </div>
+        <div class="note">daily 2-3 litre paani pina mat bhoolna 🖕 </div>
+        <div class="note">55kgs in 4 months inshallah </div>
+        <div class="note">#lockin </div>
+      </section>
+    </div>
+  </div>
+
+  <footer>
+    Made with ❤ for Dhana — by Joyas.  🤙 
+  </footer>
+
+  <script>
+    // Reset all checkboxes
+    document.getElementById('reset').addEventListener('click', () => {
+      document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+    });
+
+    // Spawn floating hearts
+    const hearts = document.getElementById('hearts');
+    const spawnHeart = () => {
+      const h = document.createElement('div');
+      h.className = 'heart';
+      const size = 8 + Math.random() * 16;
+      h.style.width = size + 'px';
+      h.style.height = size + 'px';
+      h.style.left = Math.random() * 100 + 'vw';
+      h.style.bottom = '-10vh';
+      h.style.animationDuration = (6 + Math.random() * 6) + 's';
+      h.style.opacity = 0.15 + Math.random() * 0.25;
+      hearts.appendChild(h);
+      setTimeout(() => h.remove(), 13000);
+    };
+    setInterval(spawnHeart, 800);
+
+    // Persist checkboxes (so Dhanshree can tick through the day 💗)
+    const STORAGE_KEY = 'dhanshree-diet-checks-v1';
+    const all = Array.from(document.querySelectorAll('input[type="checkbox"]'));
+    // Load
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    if (saved.length === all.length) {
+      saved.forEach((v, i) => all[i].checked = !!v);
+    }
+    // Save on change
+    all.forEach((cb, i) => cb.addEventListener('change', () => {
+      const state = all.map(x => x.checked ? 1 : 0);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }));
+  </script>
+
+
+</body></html>
